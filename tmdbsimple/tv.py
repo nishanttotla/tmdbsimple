@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 """
 tmdbsimple.tv
 ~~~~~~~~~~~~~
@@ -16,43 +15,43 @@ from .base import TMDB
 
 
 class TV(TMDB):
-    """
+  """
     TV functionality.
 
     See: https://developers.themoviedb.org/3/tv
     """
-    BASE_PATH = 'tv'
-    URLS = {
-        'info': '/{id}',
-        'account_states': '/{id}/account_states',
-        'alternative_titles': '/{id}/alternative_titles',
-        'content_ratings': '/{id}/content_ratings',
-        'credits': '/{id}/credits',
-        'episode_groups': '/{id}/episode_groups',
-        'external_ids': '/{id}/external_ids',
-        'images': '/{id}/images',
-        'keywords': '/{id}/keywords',
-        'recommendations': '/{id}/recommendations',
-        'reviews': '/{id}/reviews',
-        'screened_theatrically': '/{id}/screened_theatrically',
-        'similar': '/{id}/similar',
-        'translations': '/{id}/translations',
-        'videos': '/{id}/videos',
-        'watch_providers': '/{id}/watch/providers',
-        'rating': '/{id}/rating',
-        'latest': '/latest',
-        'airing_today': '/airing_today',
-        'on_the_air': '/on_the_air',
-        'popular': '/popular',
-        'top_rated': '/top_rated',
-    }
+  BASE_PATH = 'tv'
+  URLS = {
+      'info': '/{id}',
+      'account_states': '/{id}/account_states',
+      'alternative_titles': '/{id}/alternative_titles',
+      'content_ratings': '/{id}/content_ratings',
+      'credits': '/{id}/credits',
+      'episode_groups': '/{id}/episode_groups',
+      'external_ids': '/{id}/external_ids',
+      'images': '/{id}/images',
+      'keywords': '/{id}/keywords',
+      'recommendations': '/{id}/recommendations',
+      'reviews': '/{id}/reviews',
+      'screened_theatrically': '/{id}/screened_theatrically',
+      'similar': '/{id}/similar',
+      'translations': '/{id}/translations',
+      'videos': '/{id}/videos',
+      'watch_providers': '/{id}/watch/providers',
+      'rating': '/{id}/rating',
+      'latest': '/latest',
+      'airing_today': '/airing_today',
+      'on_the_air': '/on_the_air',
+      'popular': '/popular',
+      'top_rated': '/top_rated',
+  }
 
-    def __init__(self, id=0):
-        super(TV, self).__init__()
-        self.id = id
+  def __init__(self, id=0):
+    super(TV, self).__init__()
+    self.id = id
 
-    def info(self, **kwargs):
-        """
+  def info(self, **kwargs):
+    """
         Get the primary TV show details by id.
 
         Supports append_to_response. Read more about this at
@@ -66,14 +65,14 @@ class TV(TMDB):
         Returns:
             A dict respresentation of the JSON returned from the API.
         """
-        path = self._get_id_path('info')
+    path = self._get_id_path('info')
 
-        response = self._GET(path, kwargs)
-        self._set_attrs_to_values(response)
-        return response
+    response = self._GET(path, kwargs)
+    self._set_attrs_to_values(response)
+    return response
 
-    def account_states(self, **kwargs):
-        """
+  def account_states(self, **kwargs):
+    """
         Grab the following account states for a session:
             - TV show rating
             - If it belongs to your watchlist
@@ -87,14 +86,14 @@ class TV(TMDB):
         Returns:
             A dict respresentation of the JSON returned from the API.
         """
-        path = self._get_id_path('account_states')
+    path = self._get_id_path('account_states')
 
-        response = self._GET(path, kwargs)
-        self._set_attrs_to_values(response)
-        return response
+    response = self._GET(path, kwargs)
+    self._set_attrs_to_values(response)
+    return response
 
-    def alternative_titles(self, **kwargs):
-        """
+  def alternative_titles(self, **kwargs):
+    """
         Returns all of the alternative titles for a TV show.
 
         Args:
@@ -103,14 +102,14 @@ class TV(TMDB):
         Returns:
             A dict respresentation of the JSON returned from the API.
         """
-        path = self._get_id_path('alternative_titles')
+    path = self._get_id_path('alternative_titles')
 
-        response = self._GET(path, kwargs)
-        self._set_attrs_to_values(response)
-        return response
+    response = self._GET(path, kwargs)
+    self._set_attrs_to_values(response)
+    return response
 
-    def content_ratings(self, **kwargs):
-        """
+  def content_ratings(self, **kwargs):
+    """
         Get the list of content ratings (certifications) that have been added
         to a TV show.
 
@@ -120,14 +119,14 @@ class TV(TMDB):
         Returns:
             A dict respresentation of the JSON returned from the API.
         """
-        path = self._get_id_path('content_ratings')
+    path = self._get_id_path('content_ratings')
 
-        response = self._GET(path, kwargs)
-        self._set_attrs_to_values(response)
-        return response
+    response = self._GET(path, kwargs)
+    self._set_attrs_to_values(response)
+    return response
 
-    def credits(self, **kwargs):
-        """
+  def credits(self, **kwargs):
+    """
         Get the credits (cast and crew) that have been added to a TV show.
 
         Args:
@@ -136,14 +135,14 @@ class TV(TMDB):
         Returns:
             A dict respresentation of the JSON returned from the API.
         """
-        path = self._get_id_path('credits')
+    path = self._get_id_path('credits')
 
-        response = self._GET(path, kwargs)
-        self._set_attrs_to_values(response)
-        return response
+    response = self._GET(path, kwargs)
+    self._set_attrs_to_values(response)
+    return response
 
-    def episode_groups(self, **kwargs):
-        """
+  def episode_groups(self, **kwargs):
+    """
         Get all of the episode groups that have been created for a TV show.
         With a group ID you can call the get TV episode group details  method.
 
@@ -153,14 +152,14 @@ class TV(TMDB):
         Returns:
             A dict respresentation of the JSON returned from the API.
         """
-        path = self._get_id_path('episode_groups')
+    path = self._get_id_path('episode_groups')
 
-        response = self._GET(path, kwargs)
-        self._set_attrs_to_values(response)
-        return response
+    response = self._GET(path, kwargs)
+    self._set_attrs_to_values(response)
+    return response
 
-    def external_ids(self, **kwargs):
-        """
+  def external_ids(self, **kwargs):
+    """
         Get the external ids for a TV show. We currently support the following
         external sources.
 
@@ -176,14 +175,14 @@ class TV(TMDB):
         Returns:
             A dict respresentation of the JSON returned from the API.
         """
-        path = self._get_id_path('external_ids')
+    path = self._get_id_path('external_ids')
 
-        response = self._GET(path, kwargs)
-        self._set_attrs_to_values(response)
-        return response
+    response = self._GET(path, kwargs)
+    self._set_attrs_to_values(response)
+    return response
 
-    def images(self, **kwargs):
-        """
+  def images(self, **kwargs):
+    """
         Get the images that belong to a TV show.
 
         Querying images with a language parameter will filter the results. If
@@ -198,14 +197,14 @@ class TV(TMDB):
         Returns:
             A dict respresentation of the JSON returned from the API.
         """
-        path = self._get_id_path('images')
+    path = self._get_id_path('images')
 
-        response = self._GET(path, kwargs)
-        self._set_attrs_to_values(response)
-        return response
+    response = self._GET(path, kwargs)
+    self._set_attrs_to_values(response)
+    return response
 
-    def keywords(self, **kwargs):
-        """
+  def keywords(self, **kwargs):
+    """
         Get the keywords that have been added to a TV show.
 
         Args:
@@ -214,14 +213,14 @@ class TV(TMDB):
         Returns:
             A dict respresentation of the JSON returned from the API.
         """
-        path = self._get_id_path('keywords')
+    path = self._get_id_path('keywords')
 
-        response = self._GET(path, kwargs)
-        self._set_attrs_to_values(response)
-        return response
+    response = self._GET(path, kwargs)
+    self._set_attrs_to_values(response)
+    return response
 
-    def recommendations(self, **kwargs):
-        """
+  def recommendations(self, **kwargs):
+    """
         Get the list of TV show recommendations for this item.
 
         Args:
@@ -231,14 +230,14 @@ class TV(TMDB):
         Returns:
             A dict respresentation of the JSON returned from the API.
         """
-        path = self._get_id_path('recommendations')
+    path = self._get_id_path('recommendations')
 
-        response = self._GET(path, kwargs)
-        self._set_attrs_to_values(response)
-        return response
+    response = self._GET(path, kwargs)
+    self._set_attrs_to_values(response)
+    return response
 
-    def reviews(self, **kwargs):
-        """
+  def reviews(self, **kwargs):
+    """
         Get the reviews for a TV show.
 
         Args:
@@ -248,14 +247,14 @@ class TV(TMDB):
         Returns:
             A dict respresentation of the JSON returned from the API.
         """
-        path = self._get_id_path('reviews')
+    path = self._get_id_path('reviews')
 
-        response = self._GET(path, kwargs)
-        self._set_attrs_to_values(response)
-        return response
+    response = self._GET(path, kwargs)
+    self._set_attrs_to_values(response)
+    return response
 
-    def screened_theatrically(self, **kwargs):
-        """
+  def screened_theatrically(self, **kwargs):
+    """
         Get a list of seasons or episodes that have been screened in a film
         festival or theatre.
 
@@ -265,14 +264,14 @@ class TV(TMDB):
         Returns:
             A dict respresentation of the JSON returned from the API.
         """
-        path = self._get_id_path('screened_theatrically')
+    path = self._get_id_path('screened_theatrically')
 
-        response = self._GET(path, kwargs)
-        self._set_attrs_to_values(response)
-        return response
+    response = self._GET(path, kwargs)
+    self._set_attrs_to_values(response)
+    return response
 
-    def similar(self, **kwargs):
-        """
+  def similar(self, **kwargs):
+    """
         Get a list of similar TV shows. These items are assembled by looking at
         keywords and genres.
 
@@ -283,14 +282,14 @@ class TV(TMDB):
         Returns:
             A dict respresentation of the JSON returned from the API.
         """
-        path = self._get_id_path('similar')
+    path = self._get_id_path('similar')
 
-        response = self._GET(path, kwargs)
-        self._set_attrs_to_values(response)
-        return response
+    response = self._GET(path, kwargs)
+    self._set_attrs_to_values(response)
+    return response
 
-    def translations(self, **kwargs):
-        """
+  def translations(self, **kwargs):
+    """
         Get a list of the translations that exist for a TV show.
 
         Args:
@@ -299,14 +298,14 @@ class TV(TMDB):
         Returns:
             A dict respresentation of the JSON returned from the API.
         """
-        path = self._get_id_path('translations')
+    path = self._get_id_path('translations')
 
-        response = self._GET(path, kwargs)
-        self._set_attrs_to_values(response)
-        return response
+    response = self._GET(path, kwargs)
+    self._set_attrs_to_values(response)
+    return response
 
-    def videos(self, **kwargs):
-        """
+  def videos(self, **kwargs):
+    """
         Get the videos that have been added to a TV show.
 
         Args:
@@ -315,14 +314,14 @@ class TV(TMDB):
         Returns:
             A dict respresentation of the JSON returned from the API.
         """
-        path = self._get_id_path('videos')
+    path = self._get_id_path('videos')
 
-        response = self._GET(path, kwargs)
-        self._set_attrs_to_values(response)
-        return response
+    response = self._GET(path, kwargs)
+    self._set_attrs_to_values(response)
+    return response
 
-    def watch_providers(self, **kwargs):
-        """
+  def watch_providers(self, **kwargs):
+    """
         Get a list of the availabilities per country by provider for tv.
 
         Args:
@@ -331,13 +330,14 @@ class TV(TMDB):
         Returns:
             A dict respresentation of the JSON returned from the API.
         """
-        path = self._get_id_path('watch_providers')
+    path = self._get_id_path('watch_providers')
 
-        response = self._GET(path, kwargs)
-        self._set_attrs_to_values(response)
+    response = self._GET(path, kwargs)
+    self._set_attrs_to_values(response)
+    return response
 
-    def rating(self, **kwargs):
-        """
+  def rating(self, **kwargs):
+    """
         Rate a TV show.
 
         A valid session or guest session ID is required. You can read more
@@ -353,18 +353,18 @@ class TV(TMDB):
         Returns:
             A dict respresentation of the JSON returned from the API.
         """
-        path = self._get_id_path('rating')
+    path = self._get_id_path('rating')
 
-        payload = {
-            'value': kwargs.pop('value', None),
-        }
+    payload = {
+        'value': kwargs.pop('value', None),
+    }
 
-        response = self._POST(path, kwargs, payload)
-        self._set_attrs_to_values(response)
-        return response
+    response = self._POST(path, kwargs, payload)
+    self._set_attrs_to_values(response)
+    return response
 
-    def rating_delete(self, **kwargs):
-        """
+  def rating_delete(self, **kwargs):
+    """
         Remove your rating for a TV show.
 
         A valid session or guest session ID is required. You can read more
@@ -378,18 +378,18 @@ class TV(TMDB):
         Returns:
             A dict respresentation of the JSON returned from the API.
         """
-        path = self._get_id_path('rating')
+    path = self._get_id_path('rating')
 
-        payload = {
-            'value': kwargs.pop('value', None),
-        }
+    payload = {
+        'value': kwargs.pop('value', None),
+    }
 
-        response = self._DELETE(path, kwargs, payload)
-        self._set_attrs_to_values(response)
-        return response
+    response = self._DELETE(path, kwargs, payload)
+    self._set_attrs_to_values(response)
+    return response
 
-    def latest(self, **kwargs):
-        """
+  def latest(self, **kwargs):
+    """
         Get the most newly created TV show. This is a live response and will
         continuously change.
 
@@ -399,14 +399,14 @@ class TV(TMDB):
         Returns:
             A dict respresentation of the JSON returned from the API.
         """
-        path = self._get_id_path('latest')
+    path = self._get_id_path('latest')
 
-        response = self._GET(path, kwargs)
-        self._set_attrs_to_values(response)
-        return response
+    response = self._GET(path, kwargs)
+    self._set_attrs_to_values(response)
+    return response
 
-    def airing_today(self, **kwargs):
-        """
+  def airing_today(self, **kwargs):
+    """
         Get a list of TV shows that are airing today. This query is purely day
         based as we do not currently support airing times.
 
@@ -421,14 +421,14 @@ class TV(TMDB):
         Returns:
             A dict respresentation of the JSON returned from the API.
         """
-        path = self._get_path('airing_today')
+    path = self._get_path('airing_today')
 
-        response = self._GET(path, kwargs)
-        self._set_attrs_to_values(response)
-        return response
+    response = self._GET(path, kwargs)
+    self._set_attrs_to_values(response)
+    return response
 
-    def on_the_air(self, **kwargs):
-        """
+  def on_the_air(self, **kwargs):
+    """
         Get a list of shows that are currently on the air.
 
         This query looks for any TV show that has an episode with an air date
@@ -441,14 +441,14 @@ class TV(TMDB):
         Returns:
             A dict respresentation of the JSON returned from the API.
         """
-        path = self._get_path('on_the_air')
+    path = self._get_path('on_the_air')
 
-        response = self._GET(path, kwargs)
-        self._set_attrs_to_values(response)
-        return response
+    response = self._GET(path, kwargs)
+    self._set_attrs_to_values(response)
+    return response
 
-    def popular(self, **kwargs):
-        """
+  def popular(self, **kwargs):
+    """
         Get a list of the current popular TV shows on TMDb. This list updates
         daily.
 
@@ -459,14 +459,14 @@ class TV(TMDB):
         Returns:
             A dict respresentation of the JSON returned from the API.
         """
-        path = self._get_path('popular')
+    path = self._get_path('popular')
 
-        response = self._GET(path, kwargs)
-        self._set_attrs_to_values(response)
-        return response
+    response = self._GET(path, kwargs)
+    self._set_attrs_to_values(response)
+    return response
 
-    def top_rated(self, **kwargs):
-        """
+  def top_rated(self, **kwargs):
+    """
         Get a list of the top rated TV shows on TMDb.
 
         Args:
@@ -476,36 +476,36 @@ class TV(TMDB):
         Returns:
             A dict respresentation of the JSON returned from the API.
         """
-        path = self._get_path('top_rated')
+    path = self._get_path('top_rated')
 
-        response = self._GET(path, kwargs)
-        self._set_attrs_to_values(response)
-        return response
+    response = self._GET(path, kwargs)
+    self._set_attrs_to_values(response)
+    return response
 
 
 class TV_Seasons(TMDB):
-    """
+  """
     TV Seasons functionality.
 
     See: https://developers.themoviedb.org/3/tv-seasons
     """
-    BASE_PATH = 'tv/{tv_id}/season/{season_number}'
-    URLS = {
-        'info': '',
-        'account_states': '/account_states',
-        'credits': '/credits',
-        'external_ids': '/external_ids',
-        'images': '/images',
-        'videos': '/videos',
-    }
+  BASE_PATH = 'tv/{tv_id}/season/{season_number}'
+  URLS = {
+      'info': '',
+      'account_states': '/account_states',
+      'credits': '/credits',
+      'external_ids': '/external_ids',
+      'images': '/images',
+      'videos': '/videos',
+  }
 
-    def __init__(self, tv_id, season_number):
-        super(TV_Seasons, self).__init__()
-        self.tv_id = tv_id
-        self.season_number = season_number
+  def __init__(self, tv_id, season_number):
+    super(TV_Seasons, self).__init__()
+    self.tv_id = tv_id
+    self.season_number = season_number
 
-    def info(self, **kwargs):
-        """
+  def info(self, **kwargs):
+    """
         Get the TV season details by id.
 
         Supports append_to_response. Read more about this at
@@ -519,14 +519,14 @@ class TV_Seasons(TMDB):
         Returns:
             A dict respresentation of the JSON returned from the API.
         """
-        path = self._get_tv_id_season_number_path('info')
+    path = self._get_tv_id_season_number_path('info')
 
-        response = self._GET(path, kwargs)
-        self._set_attrs_to_values(response)
-        return response
+    response = self._GET(path, kwargs)
+    self._set_attrs_to_values(response)
+    return response
 
-    def account_states(self, **kwargs):
-        """
+  def account_states(self, **kwargs):
+    """
         Returns all of the user ratings for the season's episodes.
 
         Args:
@@ -537,14 +537,14 @@ class TV_Seasons(TMDB):
         Returns:
             A dict respresentation of the JSON returned from the API.
         """
-        path = self._get_tv_id_season_number_path('account_states')
+    path = self._get_tv_id_season_number_path('account_states')
 
-        response = self._GET(path, kwargs)
-        self._set_attrs_to_values(response)
-        return response
+    response = self._GET(path, kwargs)
+    self._set_attrs_to_values(response)
+    return response
 
-    def credits(self, **kwargs):
-        """
+  def credits(self, **kwargs):
+    """
         Get the credits for TV season.
 
         Args:
@@ -553,14 +553,14 @@ class TV_Seasons(TMDB):
         Returns:
             A dict respresentation of the JSON returned from the API.
         """
-        path = self._get_tv_id_season_number_path('credits')
+    path = self._get_tv_id_season_number_path('credits')
 
-        response = self._GET(path, kwargs)
-        self._set_attrs_to_values(response)
-        return response
+    response = self._GET(path, kwargs)
+    self._set_attrs_to_values(response)
+    return response
 
-    def external_ids(self, **kwargs):
-        """
+  def external_ids(self, **kwargs):
+    """
         Get the external ids for a TV season. We currently support the
         following external sources.
 
@@ -574,14 +574,14 @@ class TV_Seasons(TMDB):
         Returns:
             A dict respresentation of the JSON returned from the API.
         """
-        path = self._get_tv_id_season_number_path('external_ids')
+    path = self._get_tv_id_season_number_path('external_ids')
 
-        response = self._GET(path, kwargs)
-        self._set_attrs_to_values(response)
-        return response
+    response = self._GET(path, kwargs)
+    self._set_attrs_to_values(response)
+    return response
 
-    def images(self, **kwargs):
-        """
+  def images(self, **kwargs):
+    """
         Get the images that belong to a TV season.
 
         Querying images with a language parameter will filter the results. If
@@ -596,14 +596,14 @@ class TV_Seasons(TMDB):
         Returns:
             A dict respresentation of the JSON returned from the API.
         """
-        path = self._get_tv_id_season_number_path('images')
+    path = self._get_tv_id_season_number_path('images')
 
-        response = self._GET(path, kwargs)
-        self._set_attrs_to_values(response)
-        return response
+    response = self._GET(path, kwargs)
+    self._set_attrs_to_values(response)
+    return response
 
-    def videos(self, **kwargs):
-        """
+  def videos(self, **kwargs):
+    """
         Get the videos that have been added to a TV season.
 
         Args:
@@ -612,39 +612,39 @@ class TV_Seasons(TMDB):
         Returns:
             A dict respresentation of the JSON returned from the API.
         """
-        path = self._get_tv_id_season_number_path('videos')
+    path = self._get_tv_id_season_number_path('videos')
 
-        response = self._GET(path, kwargs)
-        self._set_attrs_to_values(response)
-        return response
+    response = self._GET(path, kwargs)
+    self._set_attrs_to_values(response)
+    return response
 
 
 class TV_Episodes(TMDB):
-    """
+  """
     TV Episodes functionality.
 
     See: https://developers.themoviedb.org/3/tv-episodes
     """
-    BASE_PATH = 'tv/{tv_id}/season/{season_number}/episode/{episode_number}'
-    URLS = {
-        'info': '',
-        'account_states': '/account_states',
-        'credits': '/credits',
-        'external_ids': '/external_ids',
-        'images': '/images',
-        'translations': '/translations',
-        'rating': '/rating',
-        'videos': '/videos',
-    }
+  BASE_PATH = 'tv/{tv_id}/season/{season_number}/episode/{episode_number}'
+  URLS = {
+      'info': '',
+      'account_states': '/account_states',
+      'credits': '/credits',
+      'external_ids': '/external_ids',
+      'images': '/images',
+      'translations': '/translations',
+      'rating': '/rating',
+      'videos': '/videos',
+  }
 
-    def __init__(self, tv_id, season_number, episode_number):
-        super(TV_Episodes, self).__init__()
-        self.tv_id = tv_id
-        self.season_number = season_number
-        self.episode_number = episode_number
+  def __init__(self, tv_id, season_number, episode_number):
+    super(TV_Episodes, self).__init__()
+    self.tv_id = tv_id
+    self.season_number = season_number
+    self.episode_number = episode_number
 
-    def info(self, **kwargs):
-        """
+  def info(self, **kwargs):
+    """
         Get the TV episode details by id.
 
         Supports append_to_response. Read more about this at
@@ -658,14 +658,14 @@ class TV_Episodes(TMDB):
         Returns:
             A dict respresentation of the JSON returned from the API.
         """
-        path = self._get_tv_id_season_number_episode_number_path('info')
+    path = self._get_tv_id_season_number_episode_number_path('info')
 
-        response = self._GET(path, kwargs)
-        self._set_attrs_to_values(response)
-        return response
+    response = self._GET(path, kwargs)
+    self._set_attrs_to_values(response)
+    return response
 
-    def account_states(self, **kwargs):
-        """
+  def account_states(self, **kwargs):
+    """
         Get your rating for an episode.
 
         Args:
@@ -675,15 +675,14 @@ class TV_Episodes(TMDB):
         Returns:
             A dict respresentation of the JSON returned from the API.
         """
-        path = self._get_tv_id_season_number_episode_number_path(
-            'account_states')
+    path = self._get_tv_id_season_number_episode_number_path('account_states')
 
-        response = self._GET(path, kwargs)
-        self._set_attrs_to_values(response)
-        return response
+    response = self._GET(path, kwargs)
+    self._set_attrs_to_values(response)
+    return response
 
-    def credits(self, **kwargs):
-        """
+  def credits(self, **kwargs):
+    """
         Get the credits (cast, crew and guest stars) for a TV episode.
 
         Args:
@@ -692,14 +691,14 @@ class TV_Episodes(TMDB):
         Returns:
             A dict respresentation of the JSON returned from the API.
         """
-        path = self._get_tv_id_season_number_episode_number_path('credits')
+    path = self._get_tv_id_season_number_episode_number_path('credits')
 
-        response = self._GET(path, kwargs)
-        self._set_attrs_to_values(response)
-        return response
+    response = self._GET(path, kwargs)
+    self._set_attrs_to_values(response)
+    return response
 
-    def external_ids(self, **kwargs):
-        """
+  def external_ids(self, **kwargs):
+    """
         Get the external ids for a TV episode. We currently support the
         following external sources.
 
@@ -714,15 +713,14 @@ class TV_Episodes(TMDB):
         Returns:
             A dict respresentation of the JSON returned from the API.
         """
-        path = self._get_tv_id_season_number_episode_number_path(
-            'external_ids')
+    path = self._get_tv_id_season_number_episode_number_path('external_ids')
 
-        response = self._GET(path, kwargs)
-        self._set_attrs_to_values(response)
-        return response
+    response = self._GET(path, kwargs)
+    self._set_attrs_to_values(response)
+    return response
 
-    def images(self, **kwargs):
-        """
+  def images(self, **kwargs):
+    """
         Get the images that belong to a TV episode.
 
         Querying images with a language parameter will filter the results. If
@@ -737,14 +735,14 @@ class TV_Episodes(TMDB):
         Returns:
             A dict respresentation of the JSON returned from the API.
         """
-        path = self._get_tv_id_season_number_episode_number_path('images')
+    path = self._get_tv_id_season_number_episode_number_path('images')
 
-        response = self._GET(path, kwargs)
-        self._set_attrs_to_values(response)
-        return response
+    response = self._GET(path, kwargs)
+    self._set_attrs_to_values(response)
+    return response
 
-    def translations(self, **kwargs):
-        """
+  def translations(self, **kwargs):
+    """
         Get the translation data for an episode.
 
         Args:
@@ -753,15 +751,14 @@ class TV_Episodes(TMDB):
         Returns:
             A dict respresentation of the JSON returned from the API.
         """
-        path = self._get_tv_id_season_number_episode_number_path(
-            'translations')
+    path = self._get_tv_id_season_number_episode_number_path('translations')
 
-        response = self._GET(path, kwargs)
-        self._set_attrs_to_values(response)
-        return response
+    response = self._GET(path, kwargs)
+    self._set_attrs_to_values(response)
+    return response
 
-    def rating(self, **kwargs):
-        """
+  def rating(self, **kwargs):
+    """
         Rate a TV episode.
 
         A valid session or guest session ID is required. You can read more
@@ -777,18 +774,18 @@ class TV_Episodes(TMDB):
         Returns:
             A dict respresentation of the JSON returned from the API.
         """
-        path = self._get_tv_id_season_number_episode_number_path('rating')
+    path = self._get_tv_id_season_number_episode_number_path('rating')
 
-        payload = {
-            'value': kwargs.pop('value', None),
-        }
+    payload = {
+        'value': kwargs.pop('value', None),
+    }
 
-        response = self._POST(path, kwargs, payload)
-        self._set_attrs_to_values(response)
-        return response
+    response = self._POST(path, kwargs, payload)
+    self._set_attrs_to_values(response)
+    return response
 
-    def rating_delete(self, **kwargs):
-        """
+  def rating_delete(self, **kwargs):
+    """
         Remove your rating for a TV episode.
 
         A valid session or guest session ID is required. You can read more
@@ -802,18 +799,18 @@ class TV_Episodes(TMDB):
         Returns:
             A dict respresentation of the JSON returned from the API.
         """
-        path = self._get_tv_id_season_number_episode_number_path('rating')
+    path = self._get_tv_id_season_number_episode_number_path('rating')
 
-        payload = {
-            'value': kwargs.pop('value', None),
-        }
+    payload = {
+        'value': kwargs.pop('value', None),
+    }
 
-        response = self._DELETE(path, kwargs, payload)
-        self._set_attrs_to_values(response)
-        return response
+    response = self._DELETE(path, kwargs, payload)
+    self._set_attrs_to_values(response)
+    return response
 
-    def videos(self, **kwargs):
-        """
+  def videos(self, **kwargs):
+    """
         Get the videos that have been added to a TV episode.
 
         Args:
@@ -822,30 +819,30 @@ class TV_Episodes(TMDB):
         Returns:
             A dict respresentation of the JSON returned from the API.
         """
-        path = self._get_tv_id_season_number_episode_number_path('videos')
+    path = self._get_tv_id_season_number_episode_number_path('videos')
 
-        response = self._GET(path, kwargs)
-        self._set_attrs_to_values(response)
-        return response
+    response = self._GET(path, kwargs)
+    self._set_attrs_to_values(response)
+    return response
 
 
 class TV_Episode_Groups(TMDB):
-    """
+  """
     TV Episode Groups functionality.
 
     See: https://developers.themoviedb.org/3/tv-episode-groups
     """
-    BASE_PATH = 'tv/episode_group'
-    URLS = {
-        'info': '/{id}',
-    }
+  BASE_PATH = 'tv/episode_group'
+  URLS = {
+      'info': '/{id}',
+  }
 
-    def __init__(self, id):
-        super(TV_Episode_Groups, self).__init__()
-        self.id = id
+  def __init__(self, id):
+    super(TV_Episode_Groups, self).__init__()
+    self.id = id
 
-    def info(self, **kwargs):
-        """
+  def info(self, **kwargs):
+    """
         Get the details of a TV episode group. Groups support 7 different types
         which are enumerated as the following:
             1. Original air date
@@ -862,34 +859,34 @@ class TV_Episode_Groups(TMDB):
         Returns:
             A dict respresentation of the JSON returned from the API.
         """
-        path = self._get_id_path('info')
+    path = self._get_id_path('info')
 
-        response = self._GET(path, kwargs)
-        self._set_attrs_to_values(response)
-        return response
+    response = self._GET(path, kwargs)
+    self._set_attrs_to_values(response)
+    return response
 
 
 class TV_Changes(TMDB):
-    """
+  """
     Changes functionality for TV Series, Season and Episode.
 
     See: https://developers.themoviedb.org/3/tv/get-tv-changes
          https://developers.themoviedb.org/3/tv-seasons/get-tv-season-changes
          https://developers.themoviedb.org/3/tv-episodes/get-tv-episode-changes
     """
-    BASE_PATH = 'tv'
-    URLS = {
-        'series': '/{id}/changes',             # id => tv_id
-        'season': '/season/{id}/changes',      # id => season_id
-        'episode': '/episode/{id}/changes',    # id => episode_id
-    }
+  BASE_PATH = 'tv'
+  URLS = {
+      'series': '/{id}/changes',  # id => tv_id
+      'season': '/season/{id}/changes',  # id => season_id
+      'episode': '/episode/{id}/changes',  # id => episode_id
+  }
 
-    def __init__(self, id=0):
-        super(TV_Changes, self).__init__()
-        self.id = id
+  def __init__(self, id=0):
+    super(TV_Changes, self).__init__()
+    self.id = id
 
-    def series(self, **kwargs):
-        """
+  def series(self, **kwargs):
+    """
         Get the changes for a TV show. By default only the last 24 hours are returned.
 
         You can query up to 14 days in a single query by using the start_date
@@ -911,14 +908,14 @@ class TV_Changes(TMDB):
         Returns:
             A dict respresentation of the JSON returned from the API.
         """
-        path = self._get_id_path('series')
+    path = self._get_id_path('series')
 
-        response = self._GET(path, kwargs)
-        self._set_attrs_to_values(response)
-        return response
+    response = self._GET(path, kwargs)
+    self._set_attrs_to_values(response)
+    return response
 
-    def season(self, **kwargs):
-        """
+  def season(self, **kwargs):
+    """
         Get the changes for a TV season. By default only the last 24 hours are returned.
 
         You can query up to 14 days in a single query by using the start_date
@@ -934,14 +931,14 @@ class TV_Changes(TMDB):
         Returns:
             A dict respresentation of the JSON returned from the API.
         """
-        path = self._get_id_path('season')
+    path = self._get_id_path('season')
 
-        response = self._GET(path, kwargs)
-        self._set_attrs_to_values(response)
-        return response
+    response = self._GET(path, kwargs)
+    self._set_attrs_to_values(response)
+    return response
 
-    def episode(self, **kwargs):
-        """
+  def episode(self, **kwargs):
+    """
         Get the changes for a TV episode. By default only the last 24 hours are returned.
 
         You can query up to 14 days in a single query by using the start_date
@@ -957,32 +954,32 @@ class TV_Changes(TMDB):
         Returns:
             A dict respresentation of the JSON returned from the API.
         """
-        path = self._get_id_path('episode')
+    path = self._get_id_path('episode')
 
-        response = self._GET(path, kwargs)
-        self._set_attrs_to_values(response)
-        return response
+    response = self._GET(path, kwargs)
+    self._set_attrs_to_values(response)
+    return response
 
 
 class Networks(TMDB):
-    """
+  """
     Networks functionality.
 
     See: https://developers.themoviedb.org/3/networks
     """
-    BASE_PATH = 'network'
-    URLS = {
-        'info': '/{id}',
-        'alternative_names': '/{id}/alternative_names',
-        'images': '/{id}/images',
-    }
+  BASE_PATH = 'network'
+  URLS = {
+      'info': '/{id}',
+      'alternative_names': '/{id}/alternative_names',
+      'images': '/{id}/images',
+  }
 
-    def __init__(self, id):
-        super(Networks, self).__init__()
-        self.id = id
+  def __init__(self, id):
+    super(Networks, self).__init__()
+    self.id = id
 
-    def info(self, **kwargs):
-        """
+  def info(self, **kwargs):
+    """
         Get the details of a network.
 
         Args:
@@ -991,14 +988,14 @@ class Networks(TMDB):
         Returns:
             A dict respresentation of the JSON returned from the API.
         """
-        path = self._get_id_path('info')
+    path = self._get_id_path('info')
 
-        response = self._GET(path, kwargs)
-        self._set_attrs_to_values(response)
-        return response
+    response = self._GET(path, kwargs)
+    self._set_attrs_to_values(response)
+    return response
 
-    def alternative_names(self, **kwargs):
-        """
+  def alternative_names(self, **kwargs):
+    """
         Get the alternative names of a network.
 
         Args:
@@ -1007,14 +1004,14 @@ class Networks(TMDB):
         Returns:
             A dict representation of the JSON returned from the API.
         """
-        path = self._get_id_path('alternative_names')
+    path = self._get_id_path('alternative_names')
 
-        response = self._GET(path, kwargs)
-        self._set_attrs_to_values(response)
-        return response
+    response = self._GET(path, kwargs)
+    self._set_attrs_to_values(response)
+    return response
 
-    def images(self, **kwargs):
-        """
+  def images(self, **kwargs):
+    """
         Get a TV network logos by id.
 
         There are two image formats that are supported for networks, PNG's and
@@ -1033,8 +1030,8 @@ class Networks(TMDB):
         Returns:
             A dict representation of the JSON returned from the API.
         """
-        path = self._get_id_path('images')
+    path = self._get_id_path('images')
 
-        response = self._GET(path, kwargs)
-        self._set_attrs_to_values(response)
-        return response
+    response = self._GET(path, kwargs)
+    self._set_attrs_to_values(response)
+    return response
